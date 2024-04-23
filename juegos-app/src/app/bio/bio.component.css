@@ -1,0 +1,35 @@
+.full-background {
+  width: 100vw;
+  height: 100vh;
+}
+
+:host {
+  display: block; /* Ensures the :host element is block-level */
+  background-image: url("/assets/zelda.jpg");
+
+  /* Cover the entire area of the element */
+  background-size: cover;
+
+  /* Set the background to no-repeat if it should not tile */
+  background-repeat: no-repeat;
+
+  /* Center the background image */
+  background-position: center;
+}
+
+.position-relative {
+  width: 600px;
+  height: 700px;
+
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.img {
+  border-radius: 10px;
+}
+
+.image-container img {
+  width: 50%;
+}

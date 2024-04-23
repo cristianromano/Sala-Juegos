@@ -1,0 +1,38 @@
+:host {
+  background-color: black; /* Replace with your desired color */
+}
+
+.position-relative {
+  width: 600px;
+  height: 400px;
+  background-image: url("/assets/mario.jpg");
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.full-background {
+  width: 100vw;
+  height: 100vh;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+:host {
+  display: block; /* Ensures the :host element is block-level */
+  background-image: url("/assets/castillo.gif");
+
+  /* Cover the entire area of the element */
+  background-size: cover;
+
+  /* Set the background to no-repeat if it should not tile */
+  background-repeat: no-repeat;
+
+  /* Center the background image */
+  background-position: center;
+}
+

@@ -1,0 +1,9 @@
+.navbar {
+  background-image: url("/assets/mario.jpg");
+  background-size: cover;
+}
+
+.nav-link {
+  text-decoration: none;
+  cursor: pointer;
+}
