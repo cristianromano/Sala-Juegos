@@ -16,3 +16,10 @@
   /* Center the background image */
   background-position: center;
 }
+
+@media (max-width: 768px) {
+  .full-background {
+    background: url("/assets/marioh.gif") no-repeat center center; /* Smaller image for mobile */
+    background-size: cover;
+  }
+}

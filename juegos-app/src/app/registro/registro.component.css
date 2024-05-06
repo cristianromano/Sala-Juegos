@@ -35,3 +35,38 @@ h2 {
   /* Center the background image */
   background-position: center;
 }
+
+/* Media Queries */
+@media (max-width: 768px) {
+  /* Adjustments for tablets and below */
+  .full-background form {
+    width: 90%; /* Makes the form take up most of the screen */
+    margin: 0 auto; /* Centers the form horizontally */
+  }
+
+  .position-relative {
+    position: static; /* Override Bootstrap positioning if necessary */
+  }
+
+  .d-flex {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+  }
+
+  .btn {
+    margin-bottom: 10px; /* Adds space between buttons when stacked */
+    width: 100%; /* Full width buttons */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Adjustments for small devices */
+  .full-background form {
+    width: 95%; /* Even more width for very small devices */
+  }
+}
+
+.form-control.is-invalid {
+  border-color: red !important;
+  /* Optional styling for visual emphasis */
+  box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25);
+}

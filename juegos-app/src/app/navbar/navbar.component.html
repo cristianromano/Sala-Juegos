@@ -20,6 +20,27 @@
           >
         </li>
       </ul>
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          {{ nombre }}
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <button
+              class="dropdown-item desloguear"
+              type="button"
+              (click)="logOut()"
+            >
+              Desloguearse
+            </button>
+          </li>
+        </ul>
+      </div>
       <!-- <span class="navbar-text"> Navbar text with an inline element </span> -->
     </div>
   </div>

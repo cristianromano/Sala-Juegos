@@ -13,8 +13,19 @@
         aria-describedby="emailHelp"
         formControlName="email"
       />
-      <div id="emailHelp" class="form-text">
-        Nunca compartiremos tu correo electrónico con nadie más.
+      <div
+        *ngIf="
+          userRegistro.get('email')?.touched &&
+          userRegistro.get('email')?.errors
+        "
+      >
+        <!-- Muestra el mensaje de error adecuado -->
+        <p *ngIf="userRegistro.get('email')?.errors?.['required']">
+          El email es requerido.
+        </p>
+        <p *ngIf="userRegistro.get('email')?.errors?.['email']">
+          Por favor, introduce una dirección de email válida.
+        </p>
       </div>
     </div>
     <div class="mb-3">

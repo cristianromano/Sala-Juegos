@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,16 +7,30 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent implements OnInit {
-
-  constructor(private route:Router) { }
+  auth: Auth = inject(Auth);
+  nombre?: any;
+  constructor(private route: Router) {}
 
   ngOnInit(): void {
+    this.auth.onAuthStateChanged((user) => {
+      if (!user) {
+        console.log('No hay usuario');
+      } else {
+        this.nombre = user.email;
+        console.log('aca esta el nombre', this.nombre);
+      }
+    });
   }
 
-  irBio(){
+  irBio() {
     this.route.navigate(['/bio']);
+  }
+
+  logOut() {
+    this.auth.signOut();
+    this.route.navigate(['/login']);
   }
 }

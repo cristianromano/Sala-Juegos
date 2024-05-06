@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
@@ -8,4 +8,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   styleUrl: './home.component.css',
   imports: [NavbarComponent],
 })
-export class HomeComponent {}
+export class HomeComponent implements OnInit {
+  constructor() {}
+  ngOnInit(): void {}
+}

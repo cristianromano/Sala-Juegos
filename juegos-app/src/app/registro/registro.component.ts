@@ -17,11 +17,12 @@ import {
 } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-registro',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './registro.component.html',
   styleUrl: './registro.component.css',
 })
@@ -29,7 +30,7 @@ export class RegistroComponent implements OnInit {
   firestore: Firestore = inject(Firestore);
   auth: Auth = inject(Auth);
   userRegistro = new FormGroup({
-    email: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
   });
 
@@ -57,14 +58,30 @@ export class RegistroComponent implements OnInit {
         });
       })
       .catch((error) => {
+        let rta = this.firebaseErrors(error.code);
         Swal.fire({
           icon: 'error',
-          title: `${error.message} `,
+          title: rta,
         });
       });
   }
 
   volverLogin() {
     this.router.navigate(['/']);
+  }
+
+  firebaseErrors(error: string) {
+    switch (error) {
+      case 'auth/email-already-in-use':
+        return 'Dirección de correo electrónico en uso.';
+      case 'auth/weak-password':
+        return 'contraseña debil ingrese una mas segura.';
+      case 'auth/user-not-found':
+        return 'Usuario no encontrado.';
+      case 'auth/invalid-credential':
+        return 'Credencialers incorrectas.';
+      default:
+        return 'Ocurrió un error. Por favor, inténtelo nuevamente más tarde.';
+    }
   }
 }

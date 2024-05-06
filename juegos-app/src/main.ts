@@ -10,9 +10,11 @@ import { environment } from './app/environment';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { CommonModule } from '@angular/common';
 
 bootstrapApplication(AppComponent, {
   providers: [
+    CommonModule,
     appConfig.providers,
     importProvidersFrom(
       provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),

@@ -33,3 +33,15 @@
 .image-container img {
   width: 50%;
 }
+
+@media (max-width: 768px) {
+  .position-relative {
+    width: 90%; /* More padding-friendly width on smaller devices */
+    padding: 10px; /* Reduce padding to fit smaller screens better */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Lighter shadow for a less aggressive look */
+  }
+  .image-container img {
+    width: 100%; /* Ensure images use available width */
+    max-width: none; /* Override any max-width set elsewhere */
+  }
+}
