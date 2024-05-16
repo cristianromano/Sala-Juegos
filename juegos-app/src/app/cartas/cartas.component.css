@@ -1,0 +1,17 @@
+.full-background {
+  height: 100vh;
+}
+
+:host {
+  display: block; /* Ensures the :host element is block-level */
+  background-image: url("/assets/cartas.jpg");
+
+  /* Cover the entire area of the element */
+  background-size: cover;
+
+  /* Set the background to no-repeat if it should not tile */
+  background-repeat: no-repeat;
+
+  /* Center the background image */
+  background-position: center;
+}
