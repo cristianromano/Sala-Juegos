@@ -55,6 +55,7 @@ export class LoginComponent implements OnInit {
           toast: true,
           icon: 'success',
           title: `Bienvenido ${user?.email}`,
+
           position: 'top-end',
         });
       })
@@ -97,60 +98,23 @@ export class LoginComponent implements OnInit {
   }
 
   loginRapidoUno() {
-    signInWithEmailAndPassword(
-      this.auth,
-      'cristianromano2@gmail.com',
-      'asdasd123'
-    )
-      .then((userCredential) => {
-        const user = userCredential.user;
-        this.router.navigate(['/home']);
-        Swal.fire({
-          toast: true,
-          icon: 'success',
-          title: `Bienvenido ${user?.email}`,
-          position: 'top-end',
-        });
-      })
-      .catch((error) => {
-        Swal.fire({
-          toast: true,
-          icon: 'error',
-          title: `${error.message} `,
-          position: 'top-end',
-        });
-      });
+    this.userFormulario.setValue({
+      email: 'cristianromano2@gmail.com',
+      password: 'asdasd123',
+    });
   }
 
   loginRapidoDos() {
-    signInWithEmailAndPassword(
-      this.auth,
-      'chatgpt@gmail.com',
-      'asdasd123'
-    ).then((userCredential) => {
-      const user = userCredential.user;
-      this.router.navigate(['/home']);
-      Swal.fire({
-        toast: true,
-        icon: 'success',
-        title: `Bienvenido ${user?.email}`,
-        position: 'top-end',
-      });
+    this.userFormulario.setValue({
+      email: 'chatgpt@gmail.com',
+      password: 'asdasd123',
     });
   }
 
   loginRapidoTres() {
-    signInWithEmailAndPassword(this.auth, 'anonimo@anonimo.com', '444444').then(
-      async (userCredential) => {
-        const user = userCredential.user;
-        this.router.navigate(['/home']);
-        Swal.fire({
-          toast: true,
-          icon: 'success',
-          title: `Bienvenido ${user?.email}`,
-          position: 'top-end',
-        });
-      }
-    );
+    this.userFormulario.setValue({
+      email: 'anonimo@anonimo.com',
+      password: '444444',
+    });
   }
 }
