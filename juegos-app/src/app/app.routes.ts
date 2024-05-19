@@ -22,4 +22,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./cartas/cartas.component').then((m) => m.CartasComponent),
   },
+  {
+    path: 'ahorcado',
+    loadComponent: () =>
+      import('./ahorcado/ahorcado.component').then((m) => m.AhorcadoComponent),
+  },
 ];

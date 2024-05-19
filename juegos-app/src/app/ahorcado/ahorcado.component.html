@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<div class="hangman-game">
+  <h1>Ahorcado</h1>
+  <div class="word">
+    <span *ngFor="let letter of displayedWord">{{ letter }}</span>
+  </div>
+  <div class="hangman-image">
+    <img [src]="currentImage" alt="Hangman" />
+  </div>
+  <app-teclado
+    (letterSelected)="onLetterSelected($event)"
+    [letraEquivocada]="letraEquivocada"
+    [juegoActivo]="gameActive"
+  ></app-teclado>
+  <div class="message">{{ message }}</div>
+  <div *ngIf="gameActive == false">
+    <button
+      class="btn btn-primary"
+      (click)="startGame()"
+      [disabled]="gameActive"
+    >
+      Empezar juego
+    </button>
+  </div>
+</div>

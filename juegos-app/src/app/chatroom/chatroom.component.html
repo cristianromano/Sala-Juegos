@@ -20,10 +20,20 @@
         data-bs-parent="#accordionFlushExample"
         style="max-height: 600px; overflow-y: auto; overflow-x: hidden"
       >
-        <div *ngFor="let item of mensajes" style="word-wrap: break-word">
-          <b>{{ item.nombre }}</b
-          >({{ item.fecha.toDate().toLocaleTimeString() }}):{{ item.mensaje }}
-          <!-- <div>Enviado a las {{ item.fecha | date : "shortTime" }}</div> -->
+        <div
+          *ngFor="let item of mensajes"
+          [ngClass]="{
+            'mensaje-propio': item.nombre === loggedInUser,
+            'mensaje-otro': item.nombre !== loggedInUser
+          }"
+          style="word-wrap: break-word"
+          data-bs-toggle="tooltip"
+          title="{{ item.fecha.toDate() }}"
+        >
+          <span *ngIf="item.nombre !== loggedInUser"
+            ><b>{{ item.nombre }}:</b></span
+          >
+          {{ item.mensaje }}
         </div>
         <input
           style="height: 50px; overflow-y: auto"

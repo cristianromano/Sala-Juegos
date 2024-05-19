@@ -1,0 +1,17 @@
+.hangman-game {
+  text-align: center;
+}
+
+.word {
+  font-size: 2em;
+  margin: 20px;
+}
+
+.hangman-image img {
+  width: 200px;
+}
+
+.message {
+  font-size: 1.5em;
+  margin-top: 20px;
+}

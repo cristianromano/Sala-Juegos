@@ -23,9 +23,12 @@ export class ChatroomComponent {
   firestore: Firestore = inject(Firestore);
   mensajes: any[] = [];
   mensaje: string = '';
+  loggedInUser: string = '';
+
   constructor(private elRef: ElementRef) {}
 
   ngOnInit(): void {
+    this.loggedInUser = this.auth.currentUser?.email || '';
     const refImg = collection(this.firestore, 'chats');
     const q = query(refImg, orderBy('fecha', 'asc'));
 

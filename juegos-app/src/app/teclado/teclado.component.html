@@ -1,0 +1,9 @@
+<div class="keyboard">
+  <button
+    *ngFor="let letter of letters"
+    (click)="selectLetter(letter)"
+    [disabled]="!juegoActivo || isLetterDisabled(letter)"
+  >
+    {{ letter }}
+  </button>
+</div>

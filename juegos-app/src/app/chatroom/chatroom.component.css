@@ -1,0 +1,18 @@
+.mensaje-propio {
+  text-align: right;
+  background-color: #5a65a1;
+  padding: 10px;
+  margin: 5px auto 5px 20px;
+  border-radius: 10px;
+  color: white; /* Para mejor contraste */
+}
+
+.mensaje-otro {
+  text-align: left;
+  background-color: #b46e6e;
+  padding: 10px;
+  margin: 5px 20px 5px auto;
+
+  border-radius: 10px;
+  color: white; /* Para mejor contraste */
+}

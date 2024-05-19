@@ -18,4 +18,8 @@ export class HomeComponent implements OnInit {
   irCartas() {
     this.router.navigate(['/cartas']);
   }
+
+  irAhorcado() {
+    this.router.navigate(['/ahorcado']);
+  }
 }
