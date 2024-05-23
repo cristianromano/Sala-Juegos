@@ -1,0 +1,11 @@
+<div class="full-background">
+  <app-navbar></app-navbar>
+  <div class="center-content">
+    <div id="score">Puntuación: {{ score }}</div>
+    <div id="timer">Tiempo restante: {{ timeLeft }}s</div>
+    <div id="game-container">
+      <div *ngIf="!gameOver" id="square" (click)="onSquareClick()"></div>
+      <button *ngIf="gameOver" (click)="resetGame()">Volver a jugar</button>
+    </div>
+  </div>
+</div>

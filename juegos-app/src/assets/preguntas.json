@@ -1,0 +1,89 @@
+{
+  "preguntas": [
+    {
+      "question": "¿En qué año se fundó la NBA?",
+      "correct_answer": "1946",
+      "answers": ["1950", "1946", "1955", "1960"]
+    },
+    {
+      "question": "¿Quién tiene el récord de más asistencias en la historia de la NBA?",
+      "correct_answer": "John Stockton",
+      "answers": ["Magic Johnson", "Chris Paul", "Steve Nash", "John Stockton"]
+    },
+    {
+      "question": "¿Cuál es el equipo con más campeonatos de la NBA?",
+      "correct_answer": "Boston Celtics",
+      "answers": [
+        "Los Angeles Lakers",
+        "Boston Celtics",
+        "Chicago Bulls",
+        "Golden State Warriors"
+      ]
+    },
+    {
+      "question": "¿Quién fue el primer jugador en ser seleccionado como el primer pick del draft de la NBA?",
+      "correct_answer": "Clifton McNeely",
+      "answers": [
+        "Clifton McNeely",
+        "Bill Russell",
+        "Oscar Robertson",
+        "Magic Johnson"
+      ]
+    },
+    {
+      "question": "¿Cuál es el apodo de Tim Duncan?",
+      "correct_answer": "The Big Fundamental",
+      "answers": [
+        "The King",
+        "The Answer",
+        "The Big Fundamental",
+        "The Mailman"
+      ]
+    },
+    {
+      "question": "¿Quién tiene el récord de más bloqueos en la historia de la NBA?",
+      "correct_answer": "Hakeem Olajuwon",
+      "answers": [
+        "Dikembe Mutombo",
+        "Hakeem Olajuwon",
+        "Shaquille O'Neal",
+        "David Robinson"
+      ]
+    },
+    {
+      "question": "¿Cuál es el récord de puntos anotados en un solo juego de playoffs de la NBA?",
+      "correct_answer": "Michael Jordan - 63",
+      "answers": [
+        "Kobe Bryant - 81",
+        "Wilt Chamberlain - 100",
+        "LeBron James - 61",
+        "Michael Jordan - 63"
+      ]
+    },
+    {
+      "question": "¿Quién es el entrenador con más campeonatos ganados en la historia de la NBA?",
+      "correct_answer": "Phil Jackson",
+      "answers": ["Red Auerbach", "Gregg Popovich", "Pat Riley", "Phil Jackson"]
+    },
+    {
+      "question": "¿Cuál es el nombre del trofeo que se otorga al Jugador Más Valioso (MVP) de las Finales de la NBA?",
+      "correct_answer": "Trofeo Bill Russell",
+      "answers": [
+        "Trofeo Larry O'Brien",
+        "Trofeo Maurice Podoloff",
+        "Trofeo Naismith",
+        "Trofeo Bill Russell"
+      ]
+    },
+    {
+      "question": "¿Cuál es el jugador más joven en la historia de la NBA en anotar 10,000 puntos?",
+      "correct_answer": "LeBron James",
+      "answers": [
+        "Kobe Bryant",
+        "Kevin Durant",
+        "LeBron James",
+        "Michael Jordan"
+      ]
+    }
+  ]
+}

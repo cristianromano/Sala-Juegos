@@ -1,0 +1,54 @@
+:host {
+  height: 100vh;
+  background-color: rgb(247, 241, 241);
+}
+
+.full-background {
+  width: 100%; /* Aprovecha todo el ancho disponible */
+  flex-grow: 1; /* Que el fondo ocupe todo el espacio disponible */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px; /* Margen superior */
+}
+
+#game-container {
+  position: relative;
+  width: 800px; /* Ancho del juego */
+  height: 400px; /* Alto del juego */
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#square {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  position: absolute;
+}
+
+#score,
+#timer {
+  color: rgb(19, 15, 15);
+  font-size: 24px;
+  margin: 20px 0; /* Margen tanto arriba como abajo */
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: white;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-size: 16px;
+}

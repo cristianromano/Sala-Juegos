@@ -1,0 +1,63 @@
+<div class="full-background">
+  <app-navbar></app-navbar>
+  <div class="d-flex justify-content-center align-items-center mt-5">
+    <div class="card p-4" style="width: 30rem">
+      <div *ngIf="currentQuestionIndex < preguntas.length">
+        <h2 class="card-title">
+          {{ preguntas[currentQuestionIndex].question }}
+        </h2>
+        <div class="card-body">
+          <div
+            *ngFor="let answer of preguntas[currentQuestionIndex].answers"
+            class="form-check"
+          >
+            <input
+              type="radio"
+              class="form-check-input"
+              name="answer"
+              [(ngModel)]="selectedAnswer"
+              [value]="answer"
+              [disabled]="isAnswered"
+              id="answer{{ answer }}"
+            />
+            <label class="form-check-label" [for]="'answer' + answer">{{
+              answer
+            }}</label>
+          </div>
+        </div>
+        <div class="card-footer text-center">
+          <button
+            class="btn btn-primary"
+            (click)="checkAnswer()"
+            [disabled]="isAnswered"
+          >
+            Verificar respuesta
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="showResult" class="text-center mt-3">
+        <p
+          *ngIf="
+            selectedAnswer === preguntas[currentQuestionIndex].correct_answer
+          "
+          class="text-success"
+        >
+          ¡Respuesta correcta!
+        </p>
+        <p
+          *ngIf="
+            selectedAnswer !== preguntas[currentQuestionIndex].correct_answer
+          "
+          class="text-danger"
+        >
+          Respuesta incorrecta. La correcta era
+          {{ preguntas[currentQuestionIndex].correct_answer }}.
+        </p>
+        <button class="btn btn-secondary" (click)="nextQuestion()">
+          Siguiente pregunta
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

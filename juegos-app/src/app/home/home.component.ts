@@ -22,4 +22,12 @@ export class HomeComponent implements OnInit {
   irAhorcado() {
     this.router.navigate(['/ahorcado']);
   }
+
+  irPreguntados() {
+    this.router.navigate(['/preguntados']);
+  }
+
+  irCuadrados() {
+    this.router.navigate(['/cuadrados']);
+  }
 }

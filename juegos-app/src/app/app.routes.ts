@@ -27,4 +27,18 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./ahorcado/ahorcado.component').then((m) => m.AhorcadoComponent),
   },
+  {
+    path: 'preguntados',
+    loadComponent: () =>
+      import('./preguntados/preguntados.component').then(
+        (m) => m.PreguntadosComponent
+      ),
+  },
+  {
+    path: 'cuadrados',
+    loadComponent: () =>
+      import('./cuadrados/cuadrados.component').then(
+        (m) => m.CuadradosComponent
+      ),
+  },
 ];
