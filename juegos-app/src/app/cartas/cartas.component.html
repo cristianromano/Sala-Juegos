@@ -13,6 +13,7 @@
       type="button"
       class="btn btn-primary mt-3 ms-3"
       (click)="drawCardMayor()"
+      [disabled]="estadoJuego"
     >
       CARTA MAYOR
     </button>
@@ -20,11 +21,29 @@
       type="button"
       class="btn btn-primary mt-3 ms-3"
       (click)="drawCardMenor()"
+      [disabled]="estadoJuego"
     >
       CARTA MENOR
     </button>
   </div>
-  <div class="container d-flex justify-content-center mt-5">
+  <div
+    class="container d-flex justify-content-center mt-5 alert alert-primary"
+    role="alert"
+  >
     <b>PUNTOS {{ puntos }}</b>
+  </div>
+  <div
+    class="container d-flex justify-content-center mt-5 alert alert-primary"
+    role="alert"
+  >
+    <b>VIDAS {{ vidas }}</b>
+  </div>
+  <div
+    class="container d-flex justify-content-center mt-5"
+    *ngIf="estadoJuego == true"
+  >
+    <button type="button" class="btn btn-danger" (click)="reiniciarJuego()">
+      Reiniciar Juego
+    </button>
   </div>
 </div>

@@ -8,7 +8,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-preguntados',
   standalone: true,
-  imports: [CommonModule, FormsModule,NavbarComponent],
+  imports: [CommonModule, FormsModule, NavbarComponent],
   templateUrl: './preguntados.component.html',
   styleUrl: './preguntados.component.css',
 })
@@ -27,7 +27,11 @@ export class PreguntadosComponent {
   }
 
   nextQuestion() {
-    this.currentQuestionIndex++;
+    if (this.preguntas.length === this.currentQuestionIndex + 1) {
+      this.currentQuestionIndex = 0;
+    } else {
+      this.currentQuestionIndex++;
+    }
     this.selectedAnswer = null;
     this.showResult = false;
     this.isAnswered = false;

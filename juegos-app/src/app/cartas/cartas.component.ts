@@ -26,6 +26,8 @@ export class CartasComponent {
   cartaDos?: any = {
     image: 'https://www.deckofcardsapi.com/static/img/back.png',
   };
+  vidas = 3;
+  estadoJuego = false;
 
   ngOnInit(): void {
     this.cardService.getDeck().subscribe((data) => {
@@ -49,7 +51,10 @@ export class CartasComponent {
           image: 'https://www.deckofcardsapi.com/static/img/back.png',
         };
       } else {
-        this.puntos = 0;
+        this.vidas--;
+        if (this.vidas == 0) {
+          this.estadoJuego = true;
+        }
       }
     });
   }
@@ -66,9 +71,18 @@ export class CartasComponent {
           image: 'https://www.deckofcardsapi.com/static/img/back.png',
         };
       } else {
-        this.puntos = 0;
+        this.vidas--;
+        if (this.vidas == 0) {
+          this.estadoJuego = true;
+        }
       }
     });
+  }
+
+  reiniciarJuego() {
+    this.puntos = 0;
+    this.vidas = 3;
+    this.estadoJuego = false;
   }
 
   valorCarta(carta: any) {
